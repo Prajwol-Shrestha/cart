@@ -1,21 +1,21 @@
 .order-summary{
-
+    margin: 2em 0;
     .order-summary-container{
             border-radius: 1em;
             box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
             -webkit-box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
             -moz-box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
-            padding: 1em 1.5em;
+            padding: 2em 1.5em;
         .order{
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
-            justify-content: center;
-            
+            justify-content: space-evenly;
             gap: 1em;
         
             .order-img{
-                height: 50px;
+                width:  60px;
+                object-fit: cover;
             }
     
             .qty{

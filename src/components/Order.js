@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { cartContext } from "../cartContext";
 import { BsTrash } from 'react-icons/bs'
 
-export default function Order(){
+export default function Order({ checkout }){
     const { cart, setCart } = useContext(cartContext)
 
     function decrement(item){
@@ -34,8 +34,14 @@ export default function Order(){
         setCart(cart.filter( cartItem => item.id != cartItem.id ) )
     }
 
+    const hide = {
+        display: 'none',
+    }
+    const show = {
+        display: 'block',
+    }
     return (
-        <section className="order-summary">
+        <section className="order-summary" style={ cart.length > 0 ? show : hide }>
             <h1> your order summary </h1>
 
             { cart.length > 0 ?
@@ -71,11 +77,14 @@ export default function Order(){
                             </section>
                         )
                     } )}
-                    <h3> Total: ${   cart.map( item => parseFloat(item.price.slice(1) * item.qty, 10) )
+                    <h3> Total: Rs. {   cart.map( item => parseFloat(item.price.slice(1) * item.qty, 10) )
                                     .reduce( (a, b) => a + b, 0 )
                                     .toFixed(2)
                                 } 
                     </h3>
+                    <button type="button" className="btn" onClick={checkout()}>
+                        checkout
+                    </button>
                 </div>
                 :
                 <h3 className="order-summary-container"> Your Cart is Empty </h3>

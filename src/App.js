@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Products from './components/Products'
 import Order from './components/Order'
+import Navbar from "./components/Navbar";
 import { cartContext } from "./cartContext";
 
 
 export default function App(){
     const [ items, setItems ] = useState([])
     const [ cart, setCart ] = useState([])
+    const [ checkOut, setCheckOut ] = useState(false)
 
     function addToCart(item){
         const exists = cart.find( cartItem => cartItem.id === item.id )
@@ -22,6 +24,10 @@ export default function App(){
             setCart([...cart, {...item, qty: 1}])
         }
     }
+
+    function checkout(){
+        setCheckOut(true)
+    }
     
     async function fetchData(){
         const response = await fetch('https://electronic-ecommerce.herokuapp.com/api/v1/product')
@@ -36,11 +42,14 @@ export default function App(){
     
 
     return (
-        <main className="container">
+        <>
             <cartContext.Provider value={{cart, setCart}} >
-                <Products items={ items } addToCart={addToCart}/>
-                <Order />
+                <Navbar />
+                <main className="container">
+                        <Products items={ items } addToCart={addToCart}/>
+                        <Order checkout={checkout}/>
+                </main>
             </cartContext.Provider>
-        </main>
+        </>
     )
 }
