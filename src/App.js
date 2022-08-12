@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Products from './components/Products'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App(){
+    const [ items, setItems ] = useState([])
+    
+    async function fetchData(){
+        const response = await fetch('https://electronic-ecommerce.herokuapp.com/api/v1/product')
+        const promise = await response.json() 
+        setItems(promise.data.product) 
+    }
+
+    
+    useEffect(() => {
+        fetchData()
+    }, [])
+    
+
+    return <Products items={ items }/>
 }
-
-export default App;
