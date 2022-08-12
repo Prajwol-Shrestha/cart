@@ -1,0 +1,28 @@
+.order-summary{
+
+    .order-summary-container{
+            border-radius: 1em;
+            box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
+            -webkit-box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
+            -moz-box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
+            padding: 1em 1.5em;
+        .order{
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            
+            gap: 1em;
+        
+            .order-img{
+                height: 30px;
+            }
+    
+            .qty{
+                display: flex;
+                flex-wrap: nowrap;
+                gap: .25em;
+            }
+        }
+    }
+}
