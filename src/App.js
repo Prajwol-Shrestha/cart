@@ -14,7 +14,7 @@ export default function App(){
             setCart( 
                     cart.map( 
                         cartItem => cartItem.id === item.id ? 
-                            {...exists, qty: exists.qty + 1} : 
+                            {...exists, qty: exists.stock > exists.qty ? exists.qty + 1: exists.qty} : 
                             cartItem 
                     ) 
             )

@@ -15,13 +15,18 @@
             gap: 1em;
         
             .order-img{
-                height: 30px;
+                height: 50px;
             }
     
             .qty{
                 display: flex;
                 flex-wrap: nowrap;
                 gap: .25em;
+                align-items: center;
+
+                .changeQty{
+                    padding: .15em .65em;
+                }
             }
         }
     }

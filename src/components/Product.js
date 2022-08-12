@@ -8,7 +8,6 @@ export default function Product({ item, addToCart }){
 
     const { cart, setCart } = useContext(cartContext)
 
-    console.log(cart)
 
     return (
         <article className="product">
