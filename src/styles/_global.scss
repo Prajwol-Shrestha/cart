@@ -13,3 +13,9 @@ img{
 h1,h2,h3,h4,p{
     margin: .5em 0;
 }
+
+@mixin box-shadow {
+    box-shadow: 0px 6px 18px -6px rgba($clr-primary,0.6);
+    -webkit-box-shadow: 0px 6px 18px -6px rgba($clr-primary,0.6);
+    -moz-box-shadow: 0px 6px 18px -6px rgba($clr-primary,0.6);
+}

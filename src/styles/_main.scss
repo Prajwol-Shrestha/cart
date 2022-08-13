@@ -4,3 +4,9 @@
     justify-content: center;
     margin: 3em 1em;
 }
+
+@media screen and (max-width: 500px) {
+    .container{
+        margin: 2em .65em;
+    }
+}

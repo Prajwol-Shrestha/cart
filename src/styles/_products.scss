@@ -1,22 +1,19 @@
 .products-container{
     width: 70%;
     display: grid;
-    grid-template-columns: repeat( auto-fit , 15em);
+    grid-template-columns: repeat( auto-fit , 16em);
     grid-auto-rows: auto;
+    justify-content: center;
     gap: 1.5em;
 
     .product{
         max-width: 250px;
         display: flex;
         flex-direction: column;
-        // align-items: center;
         justify-content: center;
         padding: 1em 1.5em;
-        /* border: 2px solid var(--clr-secondary); */
         border-radius: 1em;
-        box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
-        -webkit-box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
-        -moz-box-shadow: 0px 6px 18px -6px rgba(0,0,0,0.6);
+        @include box-shadow;
 
         img{
             height: 150px;
@@ -44,11 +41,10 @@
 .btn{
     padding: .65em 1.5em;
     border: none;
-    /* background-color: var(--clr-primary); */
     background-color: transparent;
-    color:black;
+    color:$clr-primary;
     border-radius: 1em;
-    border: 1px solid black;
+    border: 1px solid $clr-primary;
     text-transform: capitalize;
     transition: 0.3s ease-in-out;
     cursor: pointer;
@@ -56,7 +52,7 @@
 
 .btn:hover,
 .btn:focus{
-    color: white;
-    background-color: black;
+    color: $clr-white;
+    background-color: $clr-primary;
 }
 

@@ -24,7 +24,7 @@ export default function Form(){
             daddress: Yup.string().max(20).required("Required"),
         }),
         onSubmit: (values) => {
-            alert(`Hello ${values.name}\nThank You!\nFor Shopping With Us`)
+            alert(`Hello ${values.name}\nThank You! For Shopping With Us`)
         }
     })
     return (

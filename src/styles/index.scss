@@ -1,7 +1,7 @@
-@use 'global';
-@use 'variables';
-@use 'navbar' ;
-@use 'main';
-@use 'products';
-@use 'order';
-@use 'form';
+@import 'variables';
+@import 'global';
+@import 'navbar' ;
+@import 'main';
+@import 'products';
+@import 'order';
+@import 'form';
