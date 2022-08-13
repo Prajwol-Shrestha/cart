@@ -3,6 +3,7 @@ import Products from './components/Products'
 import Order from './components/Order'
 import Navbar from "./components/Navbar";
 import { cartContext } from "./cartContext";
+import Form from "./components/Form";
 
 
 export default function App(){
@@ -45,9 +46,14 @@ export default function App(){
         <>
             <cartContext.Provider value={{cart, setCart}} >
                 <Navbar />
-                <main className="container">
-                        <Products items={ items } addToCart={addToCart}/>
-                        <Order checkout={checkout}/>
+                <main>
+                        { checkOut ? 
+                            <Form /> : 
+                            <div className="container"> 
+                                <Products items={ items } addToCart={addToCart}/>
+                                <Order checkout={checkout}/>
+                            </div> 
+                        }
                 </main>
             </cartContext.Provider>
         </>

@@ -70,7 +70,7 @@ export default function Order({ checkout }){
                                         + 
                                         </button>
                                     </div>
-                                    <p> {price} </p>
+                                    <p> Rs. {parseFloat(price.slice(1))} </p>
                                     <BsTrash onClick={() => removeItem(cartItem)}/>
                                 </div>
                                 <hr></hr>
@@ -82,7 +82,7 @@ export default function Order({ checkout }){
                                     .toFixed(2)
                                 } 
                     </h3>
-                    <button type="button" className="btn" onClick={checkout()}>
+                    <button type="button" className="btn" onClick={checkout}>
                         checkout
                     </button>
                 </div>

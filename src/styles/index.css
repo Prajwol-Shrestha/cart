@@ -132,4 +132,30 @@ h1, h2, h3, h4, p {
 }
 .order-summary .order-summary-container .order .qty .changeQty {
   padding: 0.15em 0.65em;
+}
+
+form {
+  border-radius: 1em;
+  box-shadow: 0px 6px 18px -6px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 6px 18px -6px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 6px 18px -6px rgba(0, 0, 0, 0.6);
+  padding: 3em 4em;
+  width: 40%;
+  margin: 2em auto;
+}
+form h2 {
+  text-align: center;
+}
+form .input-container {
+  margin: 1em 0;
+}
+form .input-container input {
+  width: 100%;
+  padding: 0.5em 1em 0.5em 0;
+  border: none;
+  border-bottom: 2px solid black;
+}
+form .input-container .error {
+  font-size: 0.75rem;
+  color: red;
 }/*# sourceMappingURL=index.css.map */
