@@ -82,7 +82,7 @@ export default function Order({ checkout }){
                                     .toFixed(2)
                                 } 
                     </h3>
-                    <button type="button" className="btn" onClick={checkout}>
+                    <button type="button" className="btn" onClick={() => checkout(true)}>
                         checkout
                     </button>
                 </div>

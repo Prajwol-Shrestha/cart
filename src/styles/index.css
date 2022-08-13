@@ -178,6 +178,12 @@ form .input-container .error {
   font-size: 0.75rem;
   color: #ff624d;
 }
+form .flex-btn-container {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 @media screen and (max-width: 500px) {
   form {

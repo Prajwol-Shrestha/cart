@@ -26,8 +26,8 @@ export default function App(){
         }
     }
 
-    function checkout(){
-        setCheckOut(true)
+    function checkout(val){
+        setCheckOut(val)
     }
     
     async function fetchData(){
@@ -48,7 +48,7 @@ export default function App(){
                 <Navbar />
                 <main>
                         { checkOut ? 
-                            <Form /> : 
+                            <Form checkout={checkout}/> : 
                             <div className="container"> 
                                 <Products items={ items } addToCart={addToCart}/>
                                 <Order checkout={checkout}/>

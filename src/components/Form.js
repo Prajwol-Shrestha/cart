@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik}  from "formik";
 import * as Yup from 'yup'
 
 
-export default function Form(){
+export default function Form({ checkout }){
 
     function format(n){
         return n > 9 ? "" + n: "0" + n;
@@ -90,7 +90,10 @@ export default function Form(){
                 />
                 { formik.touched.date && formik.errors.date ? <p className="error"> { formik.errors.date } </p> : null }
             </div>
-            <button type="submit" className="btn"> Submit </button>
+            <div className="flex-btn-container">
+                <button type="button" className="btn" onClick={() => checkout(false)}> go back </button>
+                <button type="submit" className="btn"> Submit </button>
+            </div>
         </form>
     )
 }
