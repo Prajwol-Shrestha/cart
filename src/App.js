@@ -49,9 +49,15 @@ export default function App(){
                 <main>
                         { checkOut ? 
                             <Form checkout={checkout}/> : 
-                            <div className="container"> 
-                                <Products items={ items } addToCart={addToCart}/>
-                                <Order checkout={checkout}/>
+                            <div className="container">
+                                {
+                                    items.length === 0 ?
+                                    <h1> Loading... </h1> :
+                                    <>
+                                        <Products items={ items } addToCart={addToCart}/>
+                                        <Order checkout={checkout}/>
+                                    </>
+                                } 
                             </div> 
                         }
                 </main>
